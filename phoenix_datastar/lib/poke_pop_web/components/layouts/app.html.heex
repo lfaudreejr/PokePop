@@ -1,0 +1,21 @@
+<div class="bg-gray-950 text-white flex flex-col justify-between font-geist min-h-screen border-t-2 border-purple-300">
+  <nav class="flex flex-row justify-between items-center py-4 px-8">
+    <div class="flex items-baseline">
+      <a class="font-bold text-3xl" href={~p"/"}>
+        Poke<span class="text-purple-300">Pop</span>
+      </a>
+    </div>
+    <div class="flex flex-row items-center gap-8">
+      <a href={~p"/results"} class="hover:underline text-lg">Results</a>
+    </div>
+  </nav>
+
+  <main data-on-load="@get('/sse')">
+    <.flash_group flash={@flash} />
+    {@inner_content}
+  </main>
+
+  <footer class="font-light text-center py-3 text-gray-500">
+    <a href="https://github.com/lfaudreejr/PokePop" target="_blank">GitHub</a>
+  </footer>
+</div>
