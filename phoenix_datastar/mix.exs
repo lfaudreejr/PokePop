@@ -77,8 +77,9 @@ defmodule PokePop.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind poke_pop", "esbuild poke_pop"],
+      "assets.build": ["cmd --cd assets npm ci", "tailwind poke_pop", "esbuild poke_pop"],
       "assets.deploy": [
+        "cmd --cd assets npm ci",
         "tailwind poke_pop --minify",
         "esbuild poke_pop --minify",
         "phx.digest"
