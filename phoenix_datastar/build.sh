@@ -9,3 +9,5 @@ MIX_ENV=prod mix assets.deploy
 
 MIX_ENV=prod mix phx.gen.release
 MIX_ENV=prod mix release --overwrite
+
+mix run priv/repo/seeds.exs
